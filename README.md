@@ -112,7 +112,7 @@ A real-time collaborative workspace for teams.
 
 ---
 
-## 🏠 Virtual2Reality
+# Virtual2Reality
 
 A production-ready real estate enquiry platform built for an actual client.
 
@@ -126,7 +126,7 @@ A production-ready real estate enquiry platform built for an actual client.
 
 ---
 
-# 📚 Currently Learning
+ Currently Learning
 
 I strongly believe software engineering is evolving alongside AI.
 
@@ -142,7 +142,7 @@ Currently I'm focused on:
 
 ---
 
-# 🎯 Career Goal
+ Career Goal
 
 My immediate goal is to join a strong engineering team where I can contribute as a Backend or Full-Stack Software Engineer while continuing to grow into AI Software Engineering.
 
@@ -150,31 +150,6 @@ Long term, I want to build intelligent software systems that combine scalable ba
 
 ---
 
-# 📈 What You'll Find Here
 
-This portfolio showcases projects that demonstrate:
-
-- Backend Engineering
-- Full Stack Development
-- REST API Design
-- Authentication Systems
-- Database Design
-- Real-Time Communication
-- AI Integration
-- Deployment Experience
-- Software Architecture
-- Continuous Learning
-
----
-
-# 🤝 Let's Connect
-
-- Portfolio
-- LinkedIn
-- GitHub
-- X (Twitter)
-- Email
-
----
 
 > "I enjoy building software that moves beyond prototypes into production-ready systems with real-world impact."
