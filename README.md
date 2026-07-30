@@ -1,49 +1,180 @@
-# Sumedh Gaikwad — Portfolio
+# 👋 Hi, I'm Sumedh Gaikwad
 
-Backend/AI-ML engineering portfolio. React + TypeScript + Tailwind CSS v4 + React Router.
+> Backend Software Engineer • Full-Stack Developer • AI/ML Enthusiast
 
-## Local development
+I'm a backend-focused software engineer passionate about building scalable software that solves real-world problems. While I enjoy creating full-stack applications, my long-term goal is to specialize in AI-powered backend systems where machine learning meets production software.
 
-```bash
-npm install
-npm run dev
-```
+My journey started with web development, evolved into backend engineering, and now extends into Artificial Intelligence and Machine Learning. I enjoy designing systems, solving complex problems, and continuously learning technologies that help build intelligent applications.
 
-## Editing content
+---
 
-Almost everything on the site — name, projects, experience, publication, tech
-stack — lives in one file: `src/data/content.ts`. Edit that file and the
-site updates; no component changes needed for text updates.
+## 🚀 About Me
 
-Resume file: replace `public/resume.pdf` with an updated PDF (same filename).
+- 💻 Backend-first Software Engineer
+- 🌐 Full-stack capable with production deployment experience
+- 🤖 Learning AI/ML integration for modern software systems
+- 📄 Published researcher in Reinforcement Learning
+- 🏆 Smart India Hackathon participant
+- 📍 Pune, Maharashtra, India
 
-## Deploying to Vercel
+I believe software shouldn't stop at working prototypes. My goal is to build reliable, scalable, and intelligent systems that create measurable impact.
 
-### Option A — Vercel CLI (fastest)
+---
 
-```bash
-npm install -g vercel
-vercel login
-vercel        # deploy a preview
-vercel --prod # deploy to production
-```
+# 🛠 Tech Stack
 
-Vercel auto-detects this as a Vite project (build command `npm run build`,
-output directory `dist`). The included `vercel.json` adds a rewrite rule so
-client-side routes like `/projects/atrio` work on page refresh and direct
-links (required because this uses React Router).
+## Languages
 
-### Option B — Vercel dashboard (GitHub)
+- JavaScript
+- TypeScript
+- Python
+- Java
+- C
+- C++
+- SQL
 
-1. Push this project to a GitHub repository.
-2. Go to https://vercel.com/new and import the repository.
-3. Framework preset: Vite (auto-detected). Build command: `npm run build`.
-   Output directory: `dist`.
-4. Deploy. Every push to the main branch redeploys automatically.
+## Frontend
 
-## Build
+- React.js
+- HTML5
+- CSS3
+- Tailwind CSS
+- Responsive Web Design
 
-```bash
-npm run build   # outputs to dist/
-npm run preview # preview the production build locally
-```
+## Backend
+
+- Node.js
+- Express.js
+- FastAPI
+- REST APIs
+- JWT Authentication
+- Socket.io
+- MVC Architecture
+
+## Databases
+
+- PostgreSQL
+- MongoDB
+- Prisma ORM
+
+## AI / Machine Learning
+
+- PyTorch
+- Reinforcement Learning
+- Machine Learning Fundamentals
+- Model Integration
+- Inference Pipelines
+
+## Tools
+
+- Git
+- GitHub
+- Postman
+- Vercel
+- Render
+- VS Code
+- npm
+- pnpm
+- SUMO
+- TraCI
+
+---
+
+# 🌟 Featured Projects
+
+## 🚦 Smart Traffic Management System
+
+An intelligent traffic signal optimization system powered by Deep Reinforcement Learning.
+
+### Highlights
+
+- D-DQN Reinforcement Learning Agent
+- FastAPI Backend
+- React Dashboard
+- Live WebSocket Monitoring
+- Parallel RL vs Fixed-Time Simulation
+- Emergency Vehicle Detection
+- Published Research Paper
+
+---
+
+## 📝 Atrio
+
+A real-time collaborative workspace for teams.
+
+### Features
+
+- Live collaborative notes
+- Task management
+- Authentication
+- Socket.io real-time synchronization
+- MERN Stack
+
+---
+
+## 🏠 Virtual2Reality
+
+A production-ready real estate enquiry platform built for an actual client.
+
+### Features
+
+- Responsive website
+- Lead collection backend
+- Deployment
+- Client collaboration
+- Lightweight backend architecture
+
+---
+
+# 📚 Currently Learning
+
+I strongly believe software engineering is evolving alongside AI.
+
+Currently I'm focused on:
+
+- Machine Learning
+- Production AI Integration
+- Retrieval-Augmented Generation (RAG)
+- AI APIs
+- Scalable Backend Architecture
+- Cloud Services
+- System Design
+
+---
+
+# 🎯 Career Goal
+
+My immediate goal is to join a strong engineering team where I can contribute as a Backend or Full-Stack Software Engineer while continuing to grow into AI Software Engineering.
+
+Long term, I want to build intelligent software systems that combine scalable backend architecture with machine learning to solve meaningful real-world problems.
+
+---
+
+# 📈 What You'll Find Here
+
+This portfolio showcases projects that demonstrate:
+
+- Backend Engineering
+- Full Stack Development
+- REST API Design
+- Authentication Systems
+- Database Design
+- Real-Time Communication
+- AI Integration
+- Deployment Experience
+- Software Architecture
+- Continuous Learning
+
+---
+
+# 🤝 Let's Connect
+
+- Portfolio
+- LinkedIn
+- GitHub
+- X (Twitter)
+- Email
+
+---
+
+> "I enjoy building software that moves beyond prototypes into production-ready systems with real-world impact."
