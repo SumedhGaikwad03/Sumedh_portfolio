@@ -132,7 +132,7 @@ export const projectsData: Project[] = [
     oneLiner:
       "A domain-driven luxury real estate discovery platform and ingestion engine built with React 19, Express 5, Prisma, and PostgreSQL, featuring paise-accurate currency modeling and SSRF-hardened listing ingestion.",
     tech: ["React 19", "Node.js", "Express 5", "TypeScript", "PostgreSQL", "Prisma 7", "Cloudinary", "Docker", "Tailwind CSS"],
-    demo: "https://virtual2reality.in",
+    demo: "https://www.virtual2reality.in/",
     featured: true,
     overview:
       "Virtual2Reality is a commercial real estate discovery platform and inventory management engine. It features a domain-driven relational hierarchy (Developer → Project → Configuration → Media), paise-accurate currency modeling via BigInt, an SSRF-hardened web ingestion pipeline, and an administrative CMS portal with Cloudinary media streaming.",
