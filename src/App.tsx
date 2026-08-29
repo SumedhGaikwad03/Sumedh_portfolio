@@ -8,6 +8,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import PortfolioMascot from "./components/PortfolioMascot";
 import PortfolioBoot from "./components/PortfolioBoot";
 import ViewModeTransition from "./components/ViewModeTransition";
+import KeyboardShortcutsModal from "./components/KeyboardShortcutsModal";
 import { ViewModeProvider } from "./context/ViewModeContext";
 
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
@@ -19,6 +20,7 @@ function App() {
         <ScrollToTop />
         <PortfolioBoot />
         <ViewModeTransition />
+        <KeyboardShortcutsModal />
         <div className="min-h-screen flex flex-col bg-[var(--color-bg)] bg-tech-grid text-[var(--color-ink)] selection:bg-[var(--color-accent-soft)] selection:text-[var(--color-accent)]">
           <CustomCursor />
           <PortfolioMascot />

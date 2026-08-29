@@ -226,6 +226,20 @@ npm run lint
 
 ---
 
+## 🕵️ Hidden Layer
+
+The portfolio contains a small set of intentionally undocumented interactions for visitors who explore beyond the primary interface:
+
+* **Terminal Discovery Commands:** Undocumented flags and query tools embedded in the engineering console.
+* **Keyboard Navigation Interface:** Fast jump shortcuts and a dedicated shortcut panel.
+* **Companion Daemon Curiosity:** Interaction progression tracking for visitors exploring the ambient mascot.
+* **Legacy Input Sequence:** Subtle acknowledgment of classic developer inputs.
+* **Classified Project 404:** A fictional unindexed project node.
+
+*Nothing in the hidden layer is required to evaluate the portfolio's verified work; it exists purely as a reward for curiosity.*
+
+---
+
 ## 📌 Status
 
 The portfolio is stable, feature-complete, and verified:

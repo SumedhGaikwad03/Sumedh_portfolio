@@ -1,7 +1,10 @@
+// If you're reading this: yes, this daemon's curiosity is intentional.
+
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Terminal, Cpu, X } from "lucide-react";
 import { MASCOT_TIPS, type MascotTip, type MascotActionType } from "../data/mascotTips";
+import { MASCOT_PROGRESSION_STEPS } from "../data/easterEggs";
 import { useViewMode } from "../context/useViewMode";
 
 type MascotState = "idle" | "wandering" | "inspecting" | "acknowledged";
@@ -33,6 +36,7 @@ export default function PortfolioMascot() {
   const [isTouchDevice, setIsTouchDevice] = useState<boolean>(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState<boolean>(false);
   const dismissTimerRef = useRef<number | null>(null);
+  const clickCountRef = useRef<number>(0);
 
   useEffect(() => {
     const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
@@ -96,9 +100,24 @@ export default function PortfolioMascot() {
     if (dismissTimerRef.current) window.clearTimeout(dismissTimerRef.current);
 
     setMascotState("acknowledged");
-    const eligible = getEligibleTips();
-    const randomTip = eligible[Math.floor(Math.random() * eligible.length)];
-    setCurrentTip(randomTip);
+    clickCountRef.current += 1;
+    const count = clickCountRef.current;
+
+    // Check for Easter Egg mascot progression thresholds
+    const progressionMatch = MASCOT_PROGRESSION_STEPS.find((p) => p.threshold === count);
+
+    if (progressionMatch) {
+      setCurrentTip({
+        id: `easter_egg_progression_${count}`,
+        prefix: progressionMatch.prefix,
+        message: progressionMatch.message,
+        availableWhen: "ANY",
+      });
+    } else {
+      const eligible = getEligibleTips();
+      const randomTip = eligible[Math.floor(Math.random() * eligible.length)];
+      setCurrentTip(randomTip);
+    }
 
     dismissTimerRef.current = window.setTimeout(() => {
       setCurrentTip(null);

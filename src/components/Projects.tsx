@@ -1,3 +1,5 @@
+// Correctness at the boundary prevents catastrophic cascade down the stack.
+
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";

@@ -317,3 +317,45 @@ npm run dev
 3. **No Heavy Animation Libraries:** Do not add Three.js, GSAP, Canvas, or WebGL libraries. Maintain the lightweight React + Framer Motion / CSS infrastructure.
 4. **Standard Default:** `STANDARD` mode must always remain the initial default viewing mode.
 5. **No Forced Sound or Full-Screen Interruptions:** The portfolio must remain a calm, professional engineering workstation experience.
+
+---
+
+## 27. Easter Egg & Hidden Interaction System
+
+### Architecture
+The Easter egg registry and progression milestones are centralized in `src/data/easterEggs.ts`, with keyboard listening managed in `src/components/KeyboardShortcutsModal.tsx` and interactive command resolution inside `src/components/TerminalInterface.tsx` and `src/components/PortfolioMascot.tsx`.
+
+### Undocumented Terminal Commands
+* **`whoami --deep` (or `-d`):** Renders an in-depth breakdown of engineering bias (`correctness > cleverness`, `evidence > claims`, `explicit state > hidden magic`, `boring infrastructure > mysterious infrastructure`), primary systems, and current architectural objective.
+* **`sudo hire sumedh` (or `sudo hire`, `hire`):** Simulates a playful recruiter access check bypassing authorization, verifying systems and engineering evidence, and presenting direct email/LinkedIn contact buttons.
+* **`status --verbose` (or `-v`):** Exposes system diagnostics along with human factor indicators (`sleep: DEGRADED`, `coffee: REQUIRED`, `deadlines: PRESENT`, `bugs: INEVITABLE`, `confidence: HIGH`).
+* **`open 404` (or `project-404`, `classified`):** Unveils a classified fictional project acknowledging that the user discovered an unindexed sector, with a button to return to known systems.
+
+### Mascot Interaction Progression
+`PortfolioMascot.tsx` tracks session clicks (`clickCountRef`) to reward continuous curiosity at specific thresholds:
+* **3 clicks:** `> You've clicked me 3 times. Checking your clearance level...`
+* **7 clicks:** `> You've clicked me 7 times. This is becoming a concerning use of your time.`
+* **12 clicks:** `> Okay. I like you. You're actually exploring.`
+* **18+ clicks:** `HUMAN CURIOSITY INDEX: 97.4% // Acceptable engineer detected.`
+
+### Keyboard Shortcuts Modal & Konami Sequence
+* **Shortcut Panel (`?` or Shift+/):** Opens a fast keyboard interface documenting navigation keys:
+  - `[T]` &rarr; Jump to Terminal workstation
+  - `[E]` &rarr; Switch to Engineering Mode
+  - `[S]` &rarr; Switch to Standard Mode
+  - `[R]` &rarr; Open verified Resume (PDF)
+  - `[?]` &rarr; Toggle shortcuts modal
+  - `[ESC]` &rarr; Close active overlays
+* **Konami Legacy Sequence (`↑ ↑ ↓ ↓ ← → ← → B A`):** Triggers a subtle notification acknowledging `// developer mode++ [ 30 LIVES GRANTED • ZERO PRODUCTION OVERHEAD ]`.
+
+### P2.22 — Terminal UX & Daemon Status Easter Egg
+* **Terminal Scroll Isolation:** Replaced window-level `scrollIntoView()` with container-level `outputContainerRef.current.scrollTop = outputContainerRef.current.scrollHeight`, and added `preventScroll: true` on input focus. This ensures pressing Enter or executing commands never jumps or displaces the document scroll position while keeping the terminal visually anchored.
+* **Daemon Status Reveal:** Hovering continuously for 2.0s over `● SYSTEM READY` during the `PortfolioBoot` sequence triggers a subtle reveal of `daemon: curious`. Moving the pointer away before 2.0s cancels the timer, and re-entry restarts it fresh.
+* **Reduced Motion & Privacy:** Respects `prefers-reduced-motion` and operates with zero analytics, tracking, or network calls.
+
+### Safety & Privacy Guarantees
+* **Zero Arbitrary Execution:** All terminal inputs are resolved deterministically against static React component templates.
+* **No Password Collection:** Simulated sudo prompts never capture, store, or transmit user keystrokes.
+* **Zero Network Tracking:** No external analytics, trackers, or cookies are utilized for Easter egg triggers.
+* **Accessibility:** All global listeners ignore keyboard input while focused inside input fields, textareas, or selects. Escape key safely dismisses overlays.
+

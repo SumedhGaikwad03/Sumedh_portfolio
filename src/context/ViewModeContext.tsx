@@ -1,3 +1,5 @@
+// Abstraction layers are projections of the same underlying truth.
+
 import { useState, useEffect, useRef, useCallback, type ReactNode } from "react";
 import { ViewModeContext, STORAGE_KEY, type ViewMode } from "./viewModeTypes";
 

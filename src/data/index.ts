@@ -5,4 +5,5 @@ export * from "./academics";
 export * from "./technologies";
 export * from "./mascotTips";
 export * from "./projectEvidence";
+export * from "./easterEggs";
 export * from "./content";

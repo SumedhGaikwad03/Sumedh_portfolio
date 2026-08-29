@@ -1,6 +1,7 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import { DAEMON_STATUS_EASTER_EGG } from "../data/easterEggs";
 
 const DESKTOP_STEPS = [
   { text: "initializing portfolio runtime...", at: 100 },
@@ -31,6 +32,11 @@ export default function PortfolioBoot() {
 
   const [stepIndex, setStepIndex] = useState<number>(0);
   const [isReady, setIsReady] = useState<boolean>(false);
+  const [isDaemonCurious, setIsDaemonCurious] = useState<boolean>(false);
+  const [isCardHovered, setIsCardHovered] = useState<boolean>(false);
+
+  const finishTimerRef = useRef<number | null>(null);
+  const hoverTimerRef = useRef<number | null>(null);
 
   const finishBoot = useCallback(() => {
     try {
@@ -66,19 +72,57 @@ export default function PortfolioBoot() {
       timers.push(timer);
     });
 
-    const finishTimer = window.setTimeout(() => {
-      finishBoot();
-    }, totalDuration);
-    timers.push(finishTimer);
+    // Only auto-finish if not actively hovering to allow Easter egg discovery
+    if (!isCardHovered) {
+      finishTimerRef.current = window.setTimeout(() => {
+        finishBoot();
+      }, totalDuration);
+    }
 
     const handleKey = () => finishBoot();
     window.addEventListener("keydown", handleKey, { once: true });
 
     return () => {
       timers.forEach((t) => window.clearTimeout(t));
+      if (finishTimerRef.current) window.clearTimeout(finishTimerRef.current);
+      if (hoverTimerRef.current) window.clearTimeout(hoverTimerRef.current);
       window.removeEventListener("keydown", handleKey);
     };
-  }, [isVisible, isHome, finishBoot]);
+  }, [isVisible, isHome, isCardHovered, finishBoot]);
+
+  const handleStatusMouseEnter = () => {
+    if (hoverTimerRef.current) window.clearTimeout(hoverTimerRef.current);
+
+    hoverTimerRef.current = window.setTimeout(() => {
+      setIsDaemonCurious(true);
+    }, DAEMON_STATUS_EASTER_EGG.triggerHoverMs);
+  };
+
+  const handleStatusMouseLeave = () => {
+    if (hoverTimerRef.current) {
+      window.clearTimeout(hoverTimerRef.current);
+      hoverTimerRef.current = null;
+    }
+    setIsDaemonCurious(false);
+  };
+
+  const handleCardMouseEnter = () => {
+    setIsCardHovered(true);
+    if (finishTimerRef.current) {
+      window.clearTimeout(finishTimerRef.current);
+      finishTimerRef.current = null;
+    }
+  };
+
+  const handleCardMouseLeave = () => {
+    setIsCardHovered(false);
+    handleStatusMouseLeave();
+    if (isReady) {
+      finishTimerRef.current = window.setTimeout(() => {
+        finishBoot();
+      }, 1000);
+    }
+  };
 
   if (!isVisible) return null;
 
@@ -102,6 +146,8 @@ export default function PortfolioBoot() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.98, opacity: 0 }}
             transition={{ duration: 0.15 }}
+            onMouseEnter={handleCardMouseEnter}
+            onMouseLeave={handleCardMouseLeave}
             className="w-full max-w-[440px] p-6 rounded border border-[var(--color-border)] bg-[#0B0D0F] shadow-2xl font-mono text-xs space-y-4"
           >
             {/* Terminal Header */}
@@ -142,11 +188,32 @@ export default function PortfolioBoot() {
                   className="bg-[var(--color-terminal)] h-full shadow-[0_0_8px_var(--color-terminal)]"
                 />
               </div>
-              <div className="flex justify-between text-[10px] text-[var(--color-slate-light)] font-mono pt-1">
+              <div className="flex justify-between items-start text-[10px] text-[var(--color-slate-light)] font-mono pt-1">
                 <span>PROGRESS: {progressRatio}%</span>
-                <span className={isReady ? "text-[var(--color-terminal)] font-bold" : ""}>
-                  {isReady ? "SYSTEM READY" : "BOOTING..."}
-                </span>
+                <div
+                  onMouseEnter={handleStatusMouseEnter}
+                  onMouseLeave={handleStatusMouseLeave}
+                  className="text-right cursor-default select-none"
+                  title={isReady ? "status::system_ready" : undefined}
+                >
+                  <span className={`flex items-center gap-1 justify-end ${isReady ? "text-[var(--color-terminal)] font-bold" : ""}`}>
+                    {isReady && <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-terminal)] animate-pulse inline-block" />}
+                    <span>{isReady ? "SYSTEM READY" : "BOOTING..."}</span>
+                  </span>
+                  <AnimatePresence>
+                    {isDaemonCurious && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.15 }}
+                        className="text-[9px] text-[var(--color-terminal)]/70 font-mono tracking-wider italic pt-0.5"
+                      >
+                        {DAEMON_STATUS_EASTER_EGG.revealedText}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               </div>
             </div>
           </motion.div>
