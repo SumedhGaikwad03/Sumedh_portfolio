@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, Github } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink, ArrowUpRight } from "lucide-react";
 import DualSimulationDiagram from "./DualSimulationDiagram";
 import DDQNStateExplorer from "./DDQNStateExplorer";
 import SafetyInvariantPanel from "./SafetyInvariantPanel";
@@ -98,6 +98,26 @@ export default function SmartTrafficDossier({ project }: { project: Project }) {
 
         {/* Action Links & Tech Pills */}
         <div className="flex flex-wrap items-center gap-3 mb-6">
+          <a
+            href="https://ijirt.org/article?manuscript=199867"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold px-3 py-1.5 rounded bg-[var(--color-terminal)] text-[#0B0D0F] hover:bg-[var(--color-terminal)]/90 transition-colors"
+          >
+            <span>VIEW PAPER (IJIRT)</span>
+            <ExternalLink size={12} />
+          </a>
+
+          <a
+            href="https://ijirt.org/publishedpaper/IJIRT199867_PAPER.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold px-3 py-1.5 rounded border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-slate)] hover:text-[var(--color-ink)] hover:border-[var(--color-border-bright)] transition-colors"
+          >
+            <span>DIRECT PDF</span>
+            <ArrowUpRight size={12} />
+          </a>
+
           {project.github && (
             <a
               href={project.github}

@@ -6,7 +6,7 @@
 <div align="left">
   <a href="https://sumedhgaikwad.com"><strong>🌐 Live Portfolio</strong></a> &bull;
   <a href="https://sumedhgaikwad.com/resume.pdf"><strong>📄 Resume (PDF)</strong></a> &bull;
-  <a href="https://linkedin.com/in/sumedh-gaikwad"><strong>💼 LinkedIn</strong></a> &bull;
+  <a href="https://www.linkedin.com/in/sumedh-gaikwad-8b95292a6/"><strong>💼 LinkedIn</strong></a> &bull;
   <a href="https://github.com/SumedhGaikwad03"><strong>🐙 GitHub</strong></a> &bull;
   <a href="mailto:sumedhgaikwad03@gmail.com"><strong>📧 Email</strong></a>
 </div>
@@ -254,7 +254,7 @@ The portfolio is stable, feature-complete, and verified:
 
 * **Live Portfolio:** [sumedhgaikwad.com](https://sumedhgaikwad.com)
 * **Resume:** [sumedhgaikwad.com/resume.pdf](https://sumedhgaikwad.com/resume.pdf)
-* **LinkedIn:** [linkedin.com/in/sumedh-gaikwad](https://linkedin.com/in/sumedh-gaikwad)
+* **LinkedIn:** [linkedin.com/in/sumedh-gaikwad-8b95292a6](https://www.linkedin.com/in/sumedh-gaikwad-8b95292a6/)
 * **GitHub:** [github.com/SumedhGaikwad03](https://github.com/SumedhGaikwad03)
 * **Email:** [sumedhgaikwad03@gmail.com](mailto:sumedhgaikwad03@gmail.com)
 

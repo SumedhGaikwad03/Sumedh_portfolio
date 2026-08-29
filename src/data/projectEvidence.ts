@@ -58,7 +58,7 @@ export const PROJECT_EVIDENCE: Record<string, ProjectEvidence> = {
       invariant: "In-memory Map<roomId, Map<userId, socketCount>> tracks active connection counts to eliminate multi-tab disconnect flicker.",
       securityBoundary: "Stateless JWT revocation comparing decoded.iat with user.passwordChangedAt; room.members.includes(req.userId) validation.",
       concurrencyState: "Optimistic UI mutations reconciled against server and broadcast payloads via temporary client UUID reconciliation.",
-      implementationEvidence: "Mongoose pre('findOneAndDelete') hook cascades deletions across child notes and tasks; deployed beta live at atrio-gamma.vercel.app.",
+      implementationEvidence: "Mongoose pre('findOneAndDelete') hook cascades deletions across child notes and tasks; deployed live at atrio.sumedhgaikwad.com.",
     },
   },
   virtual2reality: {
@@ -77,7 +77,7 @@ export const PROJECT_EVIDENCE: Record<string, ProjectEvidence> = {
       invariant: "BigInt 64-bit integer paise normalizer eliminates binary floating-point roundoff errors across multi-crore transactions.",
       securityBoundary: "Pre-flight DNS IP resolution blocking loopback (127.0.0.1) and RFC 1918 private CIDR subnets prior to scraper network requests.",
       concurrencyState: "Multi-tier publication boundary ensuring unapproved draft developer inventories never leak into public discovery.",
-      implementationEvidence: "Production commercial platform serving live developer inventory and lead contexts at virtual2reality.in.",
+      implementationEvidence: "Production commercial platform serving live developer inventory and lead contexts at www.virtual2reality.in.",
     },
   },
   "smart-traffic-management-system": {

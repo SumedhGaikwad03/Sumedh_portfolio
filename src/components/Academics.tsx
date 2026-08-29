@@ -93,15 +93,28 @@ export default function Academics() {
             {publication.journal} · {publication.info}
           </p>
         </div>
-        <a
-          href={publication.url}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center justify-center gap-1.5 rounded border border-[var(--color-border)] bg-[var(--color-surface-elevated)] hover:border-[var(--color-terminal)] hover:text-[var(--color-terminal)] text-[var(--color-ink)] px-4 py-2 text-xs font-mono font-medium transition-colors whitespace-nowrap"
-        >
-          <span>VIEW PAPER</span>
-          <ArrowUpRight size={13} />
-        </a>
+        <div className="flex flex-wrap items-center gap-2 shrink-0">
+          <a
+            href={publication.url}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center gap-1.5 rounded border border-[var(--color-border)] bg-[var(--color-surface-elevated)] hover:border-[var(--color-terminal)] hover:text-[var(--color-terminal)] text-[var(--color-ink)] px-4 py-2 text-xs font-mono font-medium transition-colors whitespace-nowrap"
+          >
+            <span>VIEW PAPER</span>
+            <ArrowUpRight size={13} />
+          </a>
+          {publication.pdfUrl && (
+            <a
+              href={publication.pdfUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-1.5 rounded border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-terminal)] hover:text-[var(--color-terminal)] text-[var(--color-slate)] px-3 py-2 text-xs font-mono font-medium transition-colors whitespace-nowrap"
+            >
+              <span>PDF</span>
+              <ArrowUpRight size={13} />
+            </a>
+          )}
+        </div>
       </motion.div>
     </section>
   );

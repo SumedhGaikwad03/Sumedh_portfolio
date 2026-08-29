@@ -29,7 +29,7 @@ export const projectsData: Project[] = [
       "A real-time collaborative workspace engineered around dual-channel HTTP/WebSocket synchronization, multi-tenant room isolation, and low-latency team presence.",
     tech: ["React 18", "Node.js", "Express 5", "Socket.io", "MongoDB", "Mongoose", "Framer Motion", "JWT", "Tailwind CSS"],
     github: "https://github.com/SumedhGaikwad03",
-    demo: "https://atrio-gamma.vercel.app",
+    demo: "https://atrio.sumedhgaikwad.com",
     featured: true,
     overview:
       "Atrio is a full-stack real-time collaborative workspace allowing distributed teams to synchronously manage notes and tasks. It pairs an Express REST API for durable MongoDB persistence with a stateful Socket.io layer for live presence and instantaneous event propagation.",

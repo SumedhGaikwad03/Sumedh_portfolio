@@ -21,6 +21,7 @@ export interface PublicationData {
   journal: string;
   info: string;
   url: string;
+  pdfUrl?: string;
   issn: string;
 }
 
@@ -49,5 +50,6 @@ export const publicationData: PublicationData = {
   journal: "International Journal of Innovative Research in Technology (IJIRT)",
   info: "Vol. 12, Issue 11, pp. 14500–14513 · April 2026",
   issn: "ISSN: 2349-6002",
-  url: "https://ijirt.org/",
+  url: "https://ijirt.org/article?manuscript=199867",
+  pdfUrl: "https://ijirt.org/publishedpaper/IJIRT199867_PAPER.pdf",
 };
