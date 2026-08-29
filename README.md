@@ -4,8 +4,8 @@
 > I build software systems with an obsession for correctness, architecture, and the details users actually notice.
 
 <div align="left">
-  <a href="https://sumedhgaikwad.tech"><strong>🌐 Live Portfolio</strong></a> &bull;
-  <a href="https://sumedhgaikwad.tech/resume.pdf"><strong>📄 Resume (PDF)</strong></a> &bull;
+  <a href="https://sumedhgaikwad.com"><strong>🌐 Live Portfolio</strong></a> &bull;
+  <a href="https://sumedhgaikwad.com/resume.pdf"><strong>📄 Resume (PDF)</strong></a> &bull;
   <a href="https://linkedin.com/in/sumedh-gaikwad"><strong>💼 LinkedIn</strong></a> &bull;
   <a href="https://github.com/SumedhGaikwad03"><strong>🐙 GitHub</strong></a> &bull;
   <a href="mailto:sumedhgaikwad03@gmail.com"><strong>📧 Email</strong></a>
@@ -59,10 +59,10 @@ The portfolio showcases four verified systems with concrete architectural claims
 
 | System | Primary Domain | Core Architecture | Key Engineering Demonstrations |
 | :--- | :--- | :--- | :--- |
-| [**Finance One**](https://sumedhgaikwad.tech/projects/finance-one) | Financial Ledgers & Transactions | 5-Tier Domain Monolith (Express &bull; PostgreSQL &bull; Prisma) | Strict `Prisma.Decimal` arithmetic eliminating IEEE-754 floating-point drift; `BudgetLockedError` domain boundary preventing post-closing record mutations; multi-tenant 404 anti-enumeration; pgvector 2560-dim intent routing with 0.70 confidence gating. |
-| [**Atrio**](https://sumedhgaikwad.tech/projects/atrio) | Real-Time Collaboration | Dual-Channel Architecture (Express 5 &bull; Socket.io &bull; MongoDB) | Dual-channel state isolation decoupling stateless HTTP CRUD from in-process WebSocket streams; in-memory `Map<roomId, Map<userId, socketCount>>` presence tracking eliminating multi-tab flicker; stateless JWT revocation via `passwordChangedAt` timestamp checking. |
-| [**Virtual2Reality**](https://sumedhgaikwad.tech/projects/virtual2reality) | Commercial Monolith & Security | 6-Tier Modular Monolith (React 19 &bull; Express 5 &bull; Prisma 7) | 64-bit `BigInt` paise normalization for zero currency roundoff; pre-flight DNS IP resolution blocking RFC 1918 private subnets and loopback addresses against SSRF; stateless memory buffer streaming to Cloudinary; multi-tier draft/live publication filtering. |
-| [**Smart Traffic Management System**](https://sumedhgaikwad.tech/projects/smart-traffic-management-system) | Cyber-Physical RL Optimization | Step-Locked Simulation (Python &bull; FastAPI &bull; SUMO &bull; PyTorch) | Dual parallel micro-simulation (`DualSimManager`) running Baseline and PyTorch DDQN in 0.1s lockstep across TraCI ports 8813 & 8814; 23.2% delay reduction on FHWA NGSIM US-101 demand; physical timing safety invariants (10s min hold, 60s starvation override); peer-reviewed research published in IJIRT. |
+| [**Finance One**](https://sumedhgaikwad.com/projects/finance-one) | Financial Ledgers & Transactions | 5-Tier Domain Monolith (Express &bull; PostgreSQL &bull; Prisma) | Strict `Prisma.Decimal` arithmetic eliminating IEEE-754 floating-point drift; `BudgetLockedError` domain boundary preventing post-closing record mutations; multi-tenant 404 anti-enumeration; pgvector 2560-dim intent routing with 0.70 confidence gating. |
+| [**Atrio**](https://sumedhgaikwad.com/projects/atrio) | Real-Time Collaboration | Dual-Channel Architecture (Express 5 &bull; Socket.io &bull; MongoDB) | Dual-channel state isolation decoupling stateless HTTP CRUD from in-process WebSocket streams; in-memory `Map<roomId, Map<userId, socketCount>>` presence tracking eliminating multi-tab flicker; stateless JWT revocation via `passwordChangedAt` timestamp checking. |
+| [**Virtual2Reality**](https://sumedhgaikwad.com/projects/virtual2reality) | Commercial Monolith & Security | 6-Tier Modular Monolith (React 19 &bull; Express 5 &bull; Prisma 7) | 64-bit `BigInt` paise normalization for zero currency roundoff; pre-flight DNS IP resolution blocking RFC 1918 private subnets and loopback addresses against SSRF; stateless memory buffer streaming to Cloudinary; multi-tier draft/live publication filtering. |
+| [**Smart Traffic Management System**](https://sumedhgaikwad.com/projects/smart-traffic-management-system) | Cyber-Physical RL Optimization | Step-Locked Simulation (Python &bull; FastAPI &bull; SUMO &bull; PyTorch) | Dual parallel micro-simulation (`DualSimManager`) running Baseline and PyTorch DDQN in 0.1s lockstep across TraCI ports 8813 & 8814; 23.2% delay reduction on FHWA NGSIM US-101 demand; physical timing safety invariants (10s min hold, 60s starvation override); peer-reviewed research published in IJIRT. |
 
 ---
 
@@ -252,8 +252,8 @@ The portfolio is stable, feature-complete, and verified:
 
 ## 📬 Contact & Links
 
-* **Live Portfolio:** [sumedhgaikwad.tech](https://sumedhgaikwad.tech)
-* **Resume:** [sumedhgaikwad.tech/resume.pdf](https://sumedhgaikwad.tech/resume.pdf)
+* **Live Portfolio:** [sumedhgaikwad.com](https://sumedhgaikwad.com)
+* **Resume:** [sumedhgaikwad.com/resume.pdf](https://sumedhgaikwad.com/resume.pdf)
 * **LinkedIn:** [linkedin.com/in/sumedh-gaikwad](https://linkedin.com/in/sumedh-gaikwad)
 * **GitHub:** [github.com/SumedhGaikwad03](https://github.com/SumedhGaikwad03)
 * **Email:** [sumedhgaikwad03@gmail.com](mailto:sumedhgaikwad03@gmail.com)
