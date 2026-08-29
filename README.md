@@ -184,7 +184,7 @@ src/data/
 sumedh-portfolio/
 ├── docs/
 │   └── audits/                   # Internal audit reports and interaction verifications
-├── public/                       # Favicon, assets, and static resume PDF
+├── public/                       # Static assets and resume PDF
 ├── src/
 │   ├── components/               # UI components, layout headers, and navigation
 │   │   ├── atrio/                # Atrio architectural diagrams and presence probes
