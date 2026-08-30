@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion, type Variants } from "framer-motion";
 import { profile, status, current } from "../data/content";
 import { Github, Linkedin, Mail, ArrowRight, ArrowUpRight, X as XIcon, Terminal, Cpu } from "lucide-react";
@@ -6,6 +7,53 @@ import { useViewMode } from "../context/useViewMode";
 
 export default function Hero() {
   const { mode } = useViewMode();
+  const fullName = profile.name;
+  const [displayText, setDisplayText] = useState(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return fullName;
+    }
+    return "";
+  });
+  const [isRevealing, setIsRevealing] = useState(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return false;
+    }
+    return true;
+  });
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) {
+      setDisplayText(fullName);
+      setIsRevealing(false);
+      return;
+    }
+
+    let currentIndex = 0;
+    let timer: number;
+    let cursorTimer: number;
+
+    const startTimeout = window.setTimeout(() => {
+      timer = window.setInterval(() => {
+        currentIndex++;
+        setDisplayText(fullName.slice(0, currentIndex));
+
+        if (currentIndex >= fullName.length) {
+          clearInterval(timer);
+          cursorTimer = window.setTimeout(() => {
+            setIsRevealing(false);
+          }, 350);
+        }
+      }, 70);
+    }, 100);
+
+    return () => {
+      clearTimeout(startTimeout);
+      clearInterval(timer);
+      clearTimeout(cursorTimer);
+    };
+  }, [fullName]);
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -52,8 +100,22 @@ export default function Hero() {
 
         {/* Identity & Main Title */}
         <motion.div variants={itemVariants} className="space-y-3">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[var(--color-ink)] leading-[1.05]">
-            {profile.name}
+          <h1
+            className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[var(--color-ink)] leading-[1.05] relative min-h-[1.05em]"
+            aria-label={profile.name}
+          >
+            {/* Semantic & Layout Anchor: Reserves full layout footprint without layout shift */}
+            <span className="invisible select-none pointer-events-none" aria-hidden="true">
+              {profile.name}
+            </span>
+
+            {/* Progressive Terminal Identity Reveal Overlay */}
+            <span className="absolute top-0 left-0 inline-flex items-center" aria-hidden="true">
+              <span>{displayText}</span>
+              {isRevealing && (
+                <span className="inline-block w-[3px] sm:w-[5px] h-[0.75em] bg-[var(--color-terminal)] ml-1 sm:ml-1.5 animate-pulse rounded-xs" />
+              )}
+            </span>
           </h1>
 
           <div className="flex flex-wrap items-center gap-2 pt-1">

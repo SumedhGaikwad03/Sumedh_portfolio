@@ -21,6 +21,7 @@ The application is built on React 19 + TypeScript + Vite with Tailwind CSS v4 an
 │                                App.tsx                                   │
 │  ├── ViewModeProvider (localStorage persistence: "portfolio_view_mode")  │
 │  │   ├── BrowserRouter                                                   │
+│  │   │   ├── CustomCursor (Desktop requestAnimationFrame precision dot)  │
 │  │   │   ├── PortfolioBoot (Initial ~1.3s non-blocking runtime reveal)   │
 │  │   │   ├── ViewModeTransition (Deliberate terminal progress overlay)   │
 │  │   │   ├── PortfolioMascot (Autonomous daemon:pid_4096 discovery egg)  │
@@ -353,8 +354,9 @@ The Easter egg registry and progression milestones are centralized in `src/data/
 * **Daemon Status Reveal:** Hovering continuously for 2.0s over `● SYSTEM READY` during the `PortfolioBoot` sequence triggers a subtle reveal of `daemon: curious`. Moving the pointer away before 2.0s cancels the timer, and re-entry restarts it fresh.
 * **Reduced Motion & Privacy:** Respects `prefers-reduced-motion` and operates with zero analytics, tracking, or network calls.
 
-### Pointer Precision & Native Cursor Model
-* **Native Hardware-Accelerated Pointers:** Retired synthetic custom cursor overlays in favor of native operating-system hardware acceleration. This eliminates duplicate pointers, cursor lag, offset rings, and text artifacts (`↗` / `...`) when interacting with buttons, links, terminal inputs, and project cards across both Standard and Engineering modes.
+### Custom Cursor & Hero Identity Architecture
+* **Direct DOM & requestAnimationFrame Cursor:** Custom cursor operates with zero React state updates on mouse movement, updating DOM transforms directly through `requestAnimationFrame`. Center hotspot tracks hardware pointer at 1:1 with zero lag, while a subtle reactive orbit ring scales smoothly on interactive targets without text or floating character artifacts. The native pointer is hidden only on desktop fine-pointer devices via `html.has-custom-cursor`.
+* **Terminal Hero Identity Reveal:** Progressively reveals `"Sumedh Gaikwad"` across ~1.4s with a temporary terminal pulse caret that gracefully dismisses upon completion. Layout footprint is reserved by an invisible anchor element to guarantee zero vertical or horizontal layout shifts. Screen readers immediately read full semantic heading content via `aria-label`. Respects `prefers-reduced-motion: reduce` by presenting the complete name instantaneously.
 
 ### Safety & Privacy Guarantees
 * **Zero Arbitrary Execution:** All terminal inputs are resolved deterministically against static React component templates.
