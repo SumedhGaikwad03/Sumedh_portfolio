@@ -189,7 +189,6 @@ function ProjectCardItem({
         setMousePos({ x: 0, y: 0 });
       }}
       onMouseMove={handleMouseMove}
-      data-cursor="project"
       className="rounded border border-[var(--color-border)] bg-[var(--color-surface)] p-6 sm:p-7 flex flex-col hover:border-[var(--color-border-bright)] hover:bg-[var(--color-surface-elevated)] transition-all duration-200 group relative overflow-hidden"
     >
       {/* Subtle Cursor-Reactive Background Telemetry Overlay */}
@@ -388,7 +387,6 @@ function ProjectCardItem({
                 href={p.demo}
                 target="_blank"
                 rel="noreferrer"
-                data-cursor="external"
                 className="inline-flex items-center gap-1.5 text-[var(--color-terminal)] hover:underline transition-all font-medium"
               >
                 <ExternalLink size={12} />
@@ -400,7 +398,6 @@ function ProjectCardItem({
                 href={p.github}
                 target="_blank"
                 rel="noreferrer"
-                data-cursor="external"
                 className="inline-flex items-center gap-1.5 text-[var(--color-slate)] hover:text-[var(--color-ink)] transition-colors"
               >
                 <Github size={12} />

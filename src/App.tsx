@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import CustomCursor from "./components/CustomCursor";
 import ScrollToTop from "./components/ScrollToTop";
 import PortfolioMascot from "./components/PortfolioMascot";
 import PortfolioBoot from "./components/PortfolioBoot";
@@ -22,7 +21,6 @@ function App() {
         <ViewModeTransition />
         <KeyboardShortcutsModal />
         <div className="min-h-screen flex flex-col bg-[var(--color-bg)] bg-tech-grid text-[var(--color-ink)] selection:bg-[var(--color-accent-soft)] selection:text-[var(--color-accent)]">
-          <CustomCursor />
           <PortfolioMascot />
           <Nav />
           <main className="flex-1">

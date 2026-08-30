@@ -21,10 +21,10 @@ The application is built on React 19 + TypeScript + Vite with Tailwind CSS v4 an
 │                                App.tsx                                   │
 │  ├── ViewModeProvider (localStorage persistence: "portfolio_view_mode")  │
 │  │   ├── BrowserRouter                                                   │
-│  │   │   ├── CustomCursor (Desktop fine-pointer instrumentation)         │
 │  │   │   ├── PortfolioBoot (Initial ~1.3s non-blocking runtime reveal)   │
 │  │   │   ├── ViewModeTransition (Deliberate terminal progress overlay)   │
 │  │   │   ├── PortfolioMascot (Autonomous daemon:pid_4096 discovery egg)  │
+│  │   │   ├── KeyboardShortcutsModal (Global key interface & Konami toast)│
 │  │   │   ├── Nav (Sticky mode-aware header & segmented toggle)          │
 │  │   │   ├── Routes:                                                     │
 │  │   │   │   ├── Home.tsx (Mode-stratified section composition)          │
@@ -352,6 +352,9 @@ The Easter egg registry and progression milestones are centralized in `src/data/
 * **Terminal Scroll Isolation:** Replaced window-level `scrollIntoView()` with container-level `outputContainerRef.current.scrollTop = outputContainerRef.current.scrollHeight`, and added `preventScroll: true` on input focus. This ensures pressing Enter or executing commands never jumps or displaces the document scroll position while keeping the terminal visually anchored.
 * **Daemon Status Reveal:** Hovering continuously for 2.0s over `● SYSTEM READY` during the `PortfolioBoot` sequence triggers a subtle reveal of `daemon: curious`. Moving the pointer away before 2.0s cancels the timer, and re-entry restarts it fresh.
 * **Reduced Motion & Privacy:** Respects `prefers-reduced-motion` and operates with zero analytics, tracking, or network calls.
+
+### Pointer Precision & Native Cursor Model
+* **Native Hardware-Accelerated Pointers:** Retired synthetic custom cursor overlays in favor of native operating-system hardware acceleration. This eliminates duplicate pointers, cursor lag, offset rings, and text artifacts (`↗` / `...`) when interacting with buttons, links, terminal inputs, and project cards across both Standard and Engineering modes.
 
 ### Safety & Privacy Guarantees
 * **Zero Arbitrary Execution:** All terminal inputs are resolved deterministically against static React component templates.
