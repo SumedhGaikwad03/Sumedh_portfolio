@@ -24,6 +24,7 @@ export interface CurrentData {
   building: {
     name: string;
     description: string;
+    engineeringDescription?: string;
   };
   learning: string[];
   exploring: string[];
@@ -60,6 +61,8 @@ export const currentData: CurrentData = {
   building: {
     name: "Finance One",
     description:
+      "A personal finance platform focused on accurate records, clear budgets, and easier spending decisions.",
+    engineeringDescription:
       "A backend-first personal finance platform engineered for ledger correctness, budget locking, and bounded pgvector semantic queries.",
   },
   learning: [

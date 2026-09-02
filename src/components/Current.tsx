@@ -38,7 +38,9 @@ export default function Current() {
         <Panel label="BUILDING">
           <h3 className="text-[15px] font-semibold mb-1.5 text-[var(--color-ink)]">{current.building.name}</h3>
           <p className="text-[var(--color-slate)] text-xs leading-relaxed">
-            {current.building.description}
+            {mode === "ENGINEERING" && current.building.engineeringDescription
+              ? current.building.engineeringDescription
+              : current.building.description}
           </p>
         </Panel>
 

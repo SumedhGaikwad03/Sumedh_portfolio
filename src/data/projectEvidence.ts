@@ -25,11 +25,11 @@ export const PROJECT_EVIDENCE: Record<string, ProjectEvidence> = {
   "finance-one": {
     slug: "finance-one",
     standardProof: {
-      problemBrief: "Personal finance apps frequently risk IEEE-754 floating-point balance drift and unconstrained text-to-SQL LLM hallucinations.",
-      solutionBrief: "5-tier REST backend with Prisma.Decimal arithmetic, domain-enforced budget locking, and JSON parameter-extracted semantic query routing.",
+      problemBrief: "People need finance tools they can trust with accurate balances, private records, and clear answers about their spending.",
+      solutionBrief: "A personal finance platform that protects each user's data, keeps records accurate, and turns everyday questions into structured spending queries.",
       keyMetric: {
         value: "0 Floating Drift",
-        label: "Decimal-accurate ledger balances & zero direct SQL execution risk",
+        label: "Accurate ledger balances with a controlled query experience",
       },
     },
     engineeringSpecs: {
@@ -45,11 +45,11 @@ export const PROJECT_EVIDENCE: Record<string, ProjectEvidence> = {
   atrio: {
     slug: "atrio",
     standardProof: {
-      problemBrief: "Team collaboration platforms suffer from sluggish HTTP polling or catastrophic presence flapping when users refresh or open multiple tabs.",
-      solutionBrief: "Dual-channel architecture pairing an Express REST API for durable MongoDB CRUD with in-process Socket.io and in-memory connection-counted presence tracking.",
+      problemBrief: "Distributed teams need to work in the same space without waiting for updates or losing track of who is present.",
+      solutionBrief: "A shared workspace that keeps notes and tasks synchronized and shows team presence as people join, leave, or open another tab.",
       keyMetric: {
         value: "< 50ms Broadcast",
-        label: "Live event sync latency & 100% elimination of multi-tab disconnect flicker",
+        label: "Fast shared updates without multi-tab presence flicker",
       },
     },
     engineeringSpecs: {
@@ -64,11 +64,11 @@ export const PROJECT_EVIDENCE: Record<string, ProjectEvidence> = {
   virtual2reality: {
     slug: "virtual2reality",
     standardProof: {
-      problemBrief: "Real estate platforms suffer from rupee/paise roundoff errors across multi-crore transactions and SSRF vulnerabilities during automated property web scraping.",
-      solutionBrief: "6-tier modular monolith using 64-bit BigInt paise currency representation and pre-flight DNS IP filtering to block internal cloud network probing.",
+      problemBrief: "Property information arrives in inconsistent formats, while the business needs accurate prices and a safe way to bring listings into one place.",
+      solutionBrief: "A property discovery platform that organizes listings, preserves pricing accuracy, collects enquiries, and checks outside sources before importing information.",
       keyMetric: {
         value: "100% Paise Accuracy",
-        label: "Zero floating-point currency drift & RFC 1918 private subnet SSRF protection",
+        label: "Accurate property pricing and protected listing imports",
       },
     },
     engineeringSpecs: {
@@ -83,11 +83,11 @@ export const PROJECT_EVIDENCE: Record<string, ProjectEvidence> = {
   "smart-traffic-management-system": {
     slug: "smart-traffic-management-system",
     standardProof: {
-      problemBrief: "Sequential reinforcement learning traffic signal evaluations introduce stochastic vehicle arrival bias, distorting comparative delay metrics.",
-      solutionBrief: "Dual parallel SUMO micro-simulation architecture running baseline cyclical and PyTorch DDQN controllers in 0.1s lockstep with safety invariants.",
+      problemBrief: "Fixed traffic signals do not respond well to changing traffic, and testing a new approach fairly requires comparable traffic conditions.",
+      solutionBrief: "A traffic simulation that compares an adaptive controller with a fixed-timing baseline under the same traffic conditions.",
       keyMetric: {
         value: "-23.2% Delay",
-        label: "Queue wait time reduction under empirical FHWA NGSIM US-101 traffic demand",
+        label: "Lower simulated traffic delay under real-world traffic data",
       },
     },
     engineeringSpecs: {

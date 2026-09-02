@@ -2,6 +2,7 @@ export type Project = {
   slug: string;
   name: string;
   oneLiner: string;
+  engineeringOneLiner: string;
   tech: string[];
   github?: string;
   demo?: string;
@@ -26,8 +27,10 @@ export const projectsData: Project[] = [
     slug: "atrio",
     name: "Atrio",
     oneLiner:
+      "A shared workspace where distributed teams can manage notes and tasks together and see changes as they happen.",
+    engineeringOneLiner:
       "A real-time collaborative workspace engineered around dual-channel HTTP/WebSocket synchronization, multi-tenant room isolation, and low-latency team presence.",
-    tech: ["React 18", "Node.js", "Express 5", "Socket.io", "MongoDB", "Mongoose", "Framer Motion", "JWT", "Tailwind CSS"],
+    tech: ["React", "Node.js", "Socket.io", "MongoDB"],
     github: "https://github.com/SumedhGaikwad03",
     demo: "https://atrio.sumedhgaikwad.com",
     featured: true,
@@ -79,8 +82,10 @@ export const projectsData: Project[] = [
     slug: "smart-traffic-management-system",
     name: "Smart Traffic Management System",
     oneLiner:
+      "A traffic-control research project that tests whether intelligent signal decisions can reduce congestion in simulated city streets.",
+    engineeringOneLiner:
       "A dual-simulation reinforcement learning traffic controller using PyTorch Double Deep Q-Networks (DDQN) to dynamically optimize multi-phase signal timings, cutting average wait times by 23.2% while benchmarking directly against an unbiased cyclical baseline.",
-    tech: ["Python", "FastAPI", "PyTorch", "DDQN", "SUMO", "TraCI", "WebSockets", "React"],
+    tech: ["Python", "FastAPI", "PyTorch", "SUMO", "React"],
     featured: true,
     overview:
       "A research-oriented intelligent transportation platform combining PyTorch Double Deep Q-Networks (DDQN) with Eclipse SUMO micro-simulations. It runs two step-synchronized simulations concurrently (Baseline Fixed-Time vs DDQN Agent) to eliminate stochastic arrival bias while evaluating performance under empirical FHWA NGSIM US-101 traffic demand.",
@@ -130,8 +135,10 @@ export const projectsData: Project[] = [
     slug: "virtual2reality",
     name: "Virtual2Reality",
     oneLiner:
+      "A real-estate discovery platform that helps people explore properties while organizing listing information and enquiries for the business behind it.",
+    engineeringOneLiner:
       "A domain-driven luxury real estate discovery platform and ingestion engine built with React 19, Express 5, Prisma, and PostgreSQL, featuring paise-accurate currency modeling and SSRF-hardened listing ingestion.",
-    tech: ["React 19", "Node.js", "Express 5", "TypeScript", "PostgreSQL", "Prisma 7", "Cloudinary", "Docker", "Tailwind CSS"],
+    tech: ["React", "Node.js", "PostgreSQL", "Prisma", "Cloudinary"],
     demo: "https://www.virtual2reality.in/",
     featured: true,
     overview:
@@ -182,8 +189,10 @@ export const projectsData: Project[] = [
     slug: "finance-one",
     name: "Finance One",
     oneLiner:
+      "A personal finance platform designed to keep financial records accurate, keep each user's data separate, and make spending easier to understand.",
+    engineeringOneLiner:
       "A backend-first personal finance platform engineered around transactional correctness, multi-tenant data isolation, and a controlled query abstraction bridging deterministic ledgers with AI extensibility.",
-    tech: ["Node.js", "Express", "TypeScript", "Prisma", "PostgreSQL", "pgvector", "Docker", "Zod", "JWT", "Ollama"],
+    tech: ["Node.js", "TypeScript", "PostgreSQL", "Prisma", "Docker"],
     featured: true,
     placeholder: false,
     overview:

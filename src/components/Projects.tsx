@@ -93,18 +93,34 @@ function matchesCategory(slug: string, filter: CategoryFilter): boolean {
 
 function ProjectCardTelemetry({
   slug,
+  mode,
   isHovered,
   mousePos,
 }: {
   slug: string;
+  mode: string;
   isHovered: boolean;
   mousePos: { x: number; y: number };
 }) {
-  const fragments = PROJECT_TELEMETRY[slug] || [
+  const engineeringFragments = PROJECT_TELEMETRY[slug] || [
     { text: "010101", top: "15%", right: "8%", depth: 1.0 },
     { text: "101010", top: "75%", right: "12%", depth: 1.2 },
     { text: "SYSTEM", top: "85%", left: "15%", depth: 1.5, isPrimary: true },
   ];
+  const standardTraceLabels: Record<string, string> = {
+    "finance-one": "// TRACE::BALANCES",
+    atrio: "// TRACE::UPDATES",
+    virtual2reality: "// TRACE::LISTINGS",
+    "smart-traffic-management-system": "// TRACE::TRAFFIC",
+  };
+  const fragments =
+    mode === "STANDARD"
+      ? engineeringFragments.map((fragment) =>
+          fragment.isPrimary && fragment.text.startsWith("// TRACE::")
+            ? { ...fragment, text: standardTraceLabels[slug] || "// TRACE::SYSTEM" }
+            : fragment
+        )
+      : engineeringFragments;
 
   return (
     <div
@@ -193,11 +209,12 @@ function ProjectCardItem({
     >
       {/* Subtle Cursor-Reactive Background Telemetry Overlay */}
       {supportsHover && (
-        <ProjectCardTelemetry
-          slug={p.slug}
-          isHovered={isHovered}
-          mousePos={mousePos}
-        />
+          <ProjectCardTelemetry
+            slug={p.slug}
+            mode={mode}
+            isHovered={isHovered}
+            mousePos={mousePos}
+          />
       )}
 
       {/* Card Content Layer */}
@@ -233,7 +250,7 @@ function ProjectCardItem({
             </h3>
           </Link>
           <p className="text-sm sm:text-base text-[var(--color-slate)] mt-2 leading-relaxed max-w-3xl">
-            {p.oneLiner}
+            {mode === "ENGINEERING" ? p.engineeringOneLiner : p.oneLiner}
           </p>
         </div>
 
@@ -449,7 +466,7 @@ export default function Projects() {
         description={
           mode === "ENGINEERING"
             ? "Deep architectural dossiers, invariant specifications, and verified implementation evidence."
-            : "Curated software systems, distributed real-time architectures, and machine learning research."
+            : "Software projects built to solve practical problems, from personal finance to collaboration, property discovery, and traffic research."
         }
       />
 
